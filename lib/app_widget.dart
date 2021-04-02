@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/app_controller.dart';
-
-import 'home_page.dart';
+import 'package:flutter_course/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -11,12 +10,23 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                onPrimary: Colors.black87,
+                primary: Colors.grey[300],
+                minimumSize: Size(88, 36),
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(2)),
+                ),
+              ),
+            ),
             primarySwatch: Colors.deepPurple,
             brightness: AppController.instance.isDarkTheme == true
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: HomePage(),
+          home: LoginPage(),
         );
       },
     );
