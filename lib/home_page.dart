@@ -21,9 +21,8 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          // mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Counter: $counter'),
             SizedBox(height: 10),

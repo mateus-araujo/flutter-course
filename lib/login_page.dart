@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
+  String errorMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,14 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png',
+                  ),
+                ),
+                SizedBox(height: 20),
                 TextField(
                   onChanged: (value) {
                     email = value;
@@ -42,9 +51,14 @@ class _LoginPageState extends State<LoginPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
+                SizedBox(height: 10),
+                Text(
+                  errorMessage,
+                  style: TextStyle(color: Colors.red),
+                ),
                 SizedBox(height: 15),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => _signIn(email: email, password: password),
                   child: Text('Login'),
                 )
               ],
@@ -53,5 +67,15 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void _signIn({required String email, required String password}) {
+    if (email == "user@email.com") {
+      Navigator.of(context).pushReplacementNamed('/home');
+    } else {
+      setState(() {
+        errorMessage = 'Verify your credentials';
+      });
+    }
   }
 }
