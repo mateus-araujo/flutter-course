@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,15 +16,10 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
       ),
       body: Center(
-        child: GestureDetector(
-          child: Text(
-            'Counter: $counter',
-            style: TextStyle(fontSize: 20),
-          ),
-          onTap: () {
-            setState(() {
-              counter++;
-            });
+        child: Switch(
+          value: AppController.instance.isDarkTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
           },
         ),
       ),
