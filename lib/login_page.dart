@@ -23,12 +23,9 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 200,
-                  height: 200,
-                  child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png',
-                  ),
-                ),
+                    width: 200,
+                    height: 200,
+                    child: Image.asset('assets/images/logo.png')),
                 SizedBox(height: 20),
                 TextField(
                   onChanged: (value) {
