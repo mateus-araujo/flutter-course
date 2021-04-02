@@ -12,6 +12,39 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: SafeArea(
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: ClipOval(
+                  child: Image.network(
+                    'https://instagram.ffor13-1.fna.fbcdn.net/v/t51.2885-19/s150x150/132034458_142517714103365_7869639195355497690_n.jpg?tp=1&_nc_ht=instagram.ffor13-1.fna.fbcdn.net&_nc_ohc=7n2URtYIiBQAX_yLg36&edm=AP_V10EAAAAA&ccb=7-4&oh=17faa14eea71fc50c7e22212aa036743&oe=608B97CD&_nc_sid=4f375e',
+                  ),
+                ),
+                accountName: Text('Mateus Araujo'),
+                accountEmail: Text('mateus@email.com'),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Início'),
+                subtitle: Text('Tela de início'),
+                onTap: () {
+                  print('home');
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Logout'),
+                subtitle: Text('Finalizar sessão'),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: Text('Home Page'),
         actions: <Widget>[
