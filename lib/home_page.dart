@@ -34,6 +34,17 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               ListTile(
+                leading: Container(
+                  width: 25,
+                  child: Image.asset('assets/images/tinder-logo.png'),
+                ),
+                title: Text('TinderPage'),
+                subtitle: Text('Tinder Page'),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/tinder');
+                },
+              ),
+              ListTile(
                 leading: Icon(Icons.logout),
                 title: Text('Logout'),
                 subtitle: Text('Finalizar sessão'),

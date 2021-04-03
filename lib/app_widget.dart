@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course/app_controller.dart';
 import 'package:flutter_course/home_page.dart';
 import 'package:flutter_course/login_page.dart';
+import 'package:flutter_course/tinder_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -20,6 +21,7 @@ class AppWidget extends StatelessWidget {
           routes: {
             '/': (context) => LoginPage(),
             '/home': (context) => HomePage(),
+            '/tinder': (context) => TinderPage(),
           },
         );
       },

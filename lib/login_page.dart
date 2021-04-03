@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _signIn({required String email, required String password}) {
-    if (email == "user@email.com") {
+    if (email.isNotEmpty && password.isNotEmpty) {
       Navigator.of(context).pushReplacementNamed('/home');
     } else {
       setState(() {
